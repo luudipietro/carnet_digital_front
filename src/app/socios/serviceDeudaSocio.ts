@@ -10,7 +10,7 @@ export class ServiceDeudaSocio {
   private http = inject(HttpClient)
   private baseUrl = 'http://localhost:5000/api/socios'
 
-  obtenerDeudaSocio(cuit:String): Observable<DeudaSocio>{
+  obtenerDeudaSocio(cuit:string): Observable<DeudaSocio>{
     return this.http.get<DeudaSocio>(`${this.baseUrl}/${cuit}`)
   }
 }

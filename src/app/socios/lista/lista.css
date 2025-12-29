@@ -1,0 +1,68 @@
+:root {
+  --mutual-dark: #0f1724; 
+  --mutual-yellow: #f1c40f; 
+  --text-white: #ffffff;
+  --text-gray: #a0a5ab;
+}
+
+/* Contenedor Principal */
+.card-mutual {
+  background-color: var(--mutual-dark);
+  border: 2px solid var(--mutual-yellow);
+  border-radius: 12px; /* Bordes más rectos como la imagen */
+  padding: 10px;
+}
+
+.tracking-tight {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.text-secondary-light {
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
+/* Caja de SOCIO ACTIVO */
+.status-box {
+  background-color: transparent;
+  border: 3px solid var(--mutual-yellow);
+  border-radius: 12px;
+  padding: 25px 10px;
+  /* El resplandor exterior amarillo */
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.4); 
+}
+
+.status-text {
+  color: var(--text-white);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  /* Sombra de texto para el efecto de la imagen */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.status-text i {
+  color: var(--mutual-yellow);
+}
+
+/* Botón Consultar */
+.btn-consultar {
+  background-color: var(--mutual-yellow);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 40px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-consultar:hover {
+  background-color: #e2b70d;
+  transform: scale(1.02);
+}
+
+/* Spinner */
+.spinner-border.text-brand-yellow {
+  color: var(--mutual-yellow) !important;
+}

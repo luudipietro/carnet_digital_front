@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { Lista } from './socios/lista/lista';
+
+import { RouterOutlet } from "@angular/router";
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   standalone: true, // Asegura que sea standalone
-  imports: [Lista]
+  imports: [RouterOutlet]
   
 })
 export class App {

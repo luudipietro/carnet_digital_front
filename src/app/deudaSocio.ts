@@ -1,7 +1,7 @@
 
 export interface DeudaSocio{
-    cuit: number;
-    nombre: String;
+    cuit: string;
+    nombre: string;
     monto_adeudado: number;
     estado: String;
 }

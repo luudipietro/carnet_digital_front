@@ -30,39 +30,44 @@
   border-radius: 12px;
   padding: 25px 10px;
   /* El resplandor exterior amarillo */
-  box-shadow: 0 0 15px rgba(241, 196, 15, 0.4); 
+  box-shadow: 0 0 15px rgb(255, 0, 0); 
+}
+.box-shadow-active{
+  box-shadow: 0 0 15px rgb(0, 255, 21); 
 }
 
 .status-text {
   color: var(--text-white);
   font-size: 2.5rem;
   letter-spacing: 2px;
-  /* Sombra de texto para el efecto de la imagen */
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+
 }
 
-.status-text i {
-  color: var(--mutual-yellow);
-}
 
-/* Botón Consultar */
-.btn-consultar {
-  background-color: var(--mutual-yellow);
-  color: #000;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 10px 40px;
-  border-radius: 25px;
-  border: none;
-  transition: all 0.3s ease;
-}
 
-.btn-consultar:hover {
-  background-color: #e2b70d;
-  transform: scale(1.02);
-}
 
 /* Spinner */
 .spinner-border.text-brand-yellow {
   color: var(--mutual-yellow) !important;
+}
+.error-message{
+  color: red;
+}
+
+.btn-atras {
+  margin-left: 15px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-atras:hover{
+  background-color: #c8b11b;
+
+}
+.btn-atras:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

@@ -8,7 +8,7 @@ import { DeudaSocio } from '../deudaSocio';
 })
 export class ServiceDeudaSocio {
   private http = inject(HttpClient)
-  private baseUrl = 'http://localhost:5000/api/socios'
+  private baseUrl = 'http://192.168.100.82:5000/api/socios'
 
   obtenerDeudaSocio(cuit:string): Observable<DeudaSocio>{
     return this.http.get<DeudaSocio>(`${this.baseUrl}/${cuit}`)

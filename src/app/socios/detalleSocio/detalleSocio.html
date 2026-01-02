@@ -1,0 +1,49 @@
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div class="card card-mutual shadow-lg overflow-hidden p-1 border-2" style="border-color: #f1c40f !important;">
+
+        <div class="card-header bg-transparent text-center pt-4 pb-2 border-0">
+          <img src="logo_mutual_blanco.png" alt="Mutual Sueño Amarillo" height="80" class="mb-2">
+        </div>
+        @if (loading()) {
+          <div class="card-body text-center p-5">
+            <div class="spinner-border text-warning mb-4" role="status"> <span class="visually-hidden">Cargando...</span>
+            </div> 
+            <h4 class="text-dark fw-bold">Buscando Socio...</h4> </div>
+        }
+        @if(errorMsg()){
+          <div class="error-message text-center p-5">
+      {{ errorMsg() }}
+          </div>
+        }
+
+        @if (deudaSocio(); as socio) {
+          <div class="card-body text-center p-0">
+            
+            <h3 class="h4 fw-normal text-white mb-0 text-uppercase">{{ socio.nombre }}</h3>
+            <h3 class="h4 fw-normal text-white mb-0 text-uppercase mb-4">CUIT: {{ socio.cuit }}</h3>
+
+            <div class="status-box mb-4 d-flex align-items-center justify-content-center"
+                 [class.box-shadow-active]="socio.estado === 'Activo'">
+              
+              <h1 class="status-text fw-black text-uppercase mb-0 fst-italic">
+                SOCIO {{ socio.estado }}
+              </h1>
+            </div>
+
+            
+          </div>
+
+        } 
+       <button class="btn-atras" routerLink="/">
+              Volver a inicio
+            </button>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+<hr class="my-4">

@@ -1,0 +1,49 @@
+<div class="buscador-container">
+  <h3>Ingrese CUIT o DNI</h3>
+  
+  <form [formGroup]="form" (ngSubmit)="buscar()" class="cuit-wrapper">
+    <div class="contenedor-inputs d-flex justify-content-center gap-3 pb-2">
+
+    
+    <input 
+      id="input-prefijo"
+      type="text" 
+      formControlName="prefijo" 
+      class="box box-small" 
+      maxlength="2"
+      placeholder="XX"
+      (input)="autoFocus($event, 'input-dni', 2)"
+    >
+
+    <span class="guion">-</span>
+
+    <input 
+      id="input-dni"
+      type="text" 
+      formControlName="dni" 
+      class="box box-large" 
+      maxlength="8"
+      placeholder="XXXXXXXX"
+      (input)="autoFocus($event, 'input-verif', 8)"
+    >
+
+    <span class="guion">-</span>
+
+    <input 
+      id="input-verif"
+      type="text" 
+      formControlName="verificador" 
+      class="box box-small" 
+      maxlength="1"
+      placeholder="X"
+    >
+  </div>
+    <button type="submit" class="btn-buscar" [disabled]="form.controls.dni.invalid">
+      Buscar
+    </button>
+  </form>
+
+  @if (form.controls.dni.touched && form.controls.dni.invalid) {
+    <div class="error-text">El DNI es obligatorio (mínimo 7 números).</div>
+  }
+</div>

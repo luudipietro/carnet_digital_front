@@ -12,6 +12,6 @@ export class ServiceDeudaSocio {
   private baseUrl = environment.apiUrl;
 
   obtenerDeudaSocio(cuit:string): Observable<DeudaSocio>{
-    return this.http.get<DeudaSocio>(`${this.baseUrl}/${cuit}`)
+    return this.http.get<DeudaSocio>(`${this.baseUrl}/socios/${cuit}`)
   }
 }

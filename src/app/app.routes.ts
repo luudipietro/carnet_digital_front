@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { SociosHome } from './socios/socios-home';
 import { DetalleSocio } from './socios/detalleSocio/detalleSocio';
+import { CargaArchivo } from './carga/cargaArchivo/carga-archivo';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,9 @@ export const routes: Routes = [
       // Usamos ':id' como el nombre del parámetro que leerá DetalleSocioComponent
       { path: ':id', component: DetalleSocio }
     ]
+  },
+  {
+    path: 'upload', component: CargaArchivo
   },
   // Redirección por defecto
   { path: '', redirectTo: '/socios', pathMatch: 'full' }

@@ -1,0 +1,40 @@
+<div class="upload-container">
+  <h2>Carga de Información</h2>
+
+  <div class="form-group">
+    <label class="caja" for="sociosInput">Archivo de Socios:</label>
+    <input 
+      class="caja" 
+      id="sociosInput" 
+      type="file" 
+      accept=".xlsx, .xls"
+      (change)="onFileSelected($event, 'socios')"
+    >
+    
+  </div>
+
+  <div class="form-group">
+    <label class="caja" for="deudasInput">Archivo de Deudas:</label>
+    <input 
+      class="caja"
+      id="deudasInput" 
+      type="file" 
+      accept=".xlsx, .xls"
+      (change)="onFileSelected($event, 'deudas')"
+    >
+
+  </div>
+
+  <button 
+    (click)="onSubmit()" 
+    [disabled]="!selectedSocios || isLoading"
+  >
+    {{ isLoading ? 'Enviando...' : 'Procesar Archivos' }}
+  </button>
+
+  @if (message) {
+    <div class="alert">
+      {{ message }}
+    </div>
+  }
+</div>

@@ -11,11 +11,6 @@
       (change)="onFileSelected($event, 'socios')"
     >
     
-    @if (selectedSocios) {
-      <p class="file-name">
-        Seleccionado: {{ selectedSocios.name }}
-      </p>
-    }
   </div>
 
   <div class="form-group">
@@ -28,16 +23,11 @@
       (change)="onFileSelected($event, 'deudas')"
     >
 
-    @if (selectedDeudas) {
-      <p class="file-name">
-        Seleccionado: {{ selectedDeudas.name }}
-      </p>
-    }
   </div>
 
   <button 
     (click)="onSubmit()" 
-    [disabled]="!selectedSocios || !selectedDeudas || isLoading"
+    [disabled]="!selectedSocios || isLoading"
   >
     {{ isLoading ? 'Enviando...' : 'Procesar Archivos' }}
   </button>

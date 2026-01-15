@@ -36,8 +36,8 @@ export class CargaArchivo {
   }
 
   onSubmit(): void {
-    if (!this.selectedSocios || !this.selectedDeudas) {
-      this.message = 'Por favor, selecciona ambos archivos Excel.';
+    if (!this.selectedSocios) {
+      this.message = 'Por favor, selecciona al menos el archivo de socios.';
       return;
     }
 
@@ -49,7 +49,7 @@ export class CargaArchivo {
         // Finalize se ejecuta tanto en éxito como en error (bueno para apagar spinners)
         finalize(() => {
           this.isLoading = false;
-        this.cdr.detectChanges();
+          this.cdr.detectChanges();
         }
       )
         

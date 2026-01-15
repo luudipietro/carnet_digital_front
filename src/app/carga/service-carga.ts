@@ -10,12 +10,15 @@ export class ServiceCarga {
   private http = inject(HttpClient);
   private baseUrl = environment.apiUrl;
 
-  uploadExcelFiles(sociosFile: File, deudasFile: File): Observable<any> {
+  uploadExcelFiles(sociosFile: File, deudasFile: File | null): Observable<any> {
     const formData = new FormData();
 
     // Las keys deben coincidir EXACTAMENTE con lo que espera el backend
     formData.append('socios', sociosFile);
-    formData.append('deudas', deudasFile);
+    if(deudasFile){
+      formData.append('deudas', deudasFile);
+    }
+    
 
     // No agregamos headers manuales para Content-Type, dejamos que el navegador lo haga
     return this.http.post(`${this.baseUrl}/upload`, formData);
